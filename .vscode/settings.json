@@ -1,0 +1,17 @@
+{
+    "configuration": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)- Veterinaria",
+            "request": "launch",
+            "mainClass": "veterinaria.Veterinaria"
+        }
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
+}
