@@ -23,7 +23,7 @@ public class Gato extends Mascota {
         return constoConsulta;
     }
 
-    public void setCostoConsulta(int constoConsulta) {
+    public void setCostoConsulta(Double constoConsulta) {
         this.constoConsulta = constoConsulta;
     }
 

@@ -13,7 +13,11 @@ public class Loro extends Mascota {
         this.canta = canta;
     }
 
-    public String[] getColores() {
+    public String getColores() {
+        String colores = "";
+        for (int i = 0; i < this.colores.length; i++) {
+            colores += this.colores[i] + "-";
+        }
         return colores;
     }
 
@@ -29,7 +33,7 @@ public class Loro extends Mascota {
         return constoConsulta;
     }
 
-    public void setCostoConsulta(int constoConsulta) {
+    public void setCostoConsulta(Double constoConsulta) {
         this.constoConsulta = constoConsulta;
     }
 
