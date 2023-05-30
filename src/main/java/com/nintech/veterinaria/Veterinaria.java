@@ -65,8 +65,12 @@ public class Veterinaria {
         );
 
         if (selectedOption != null) {
-            // Aquí puedes realizar las acciones correspondientes a la opción seleccionada
-            // No es necesario devolver un valor en este caso
+            if (action == "dar de alta") {
+                
+        } else {
+                
+        }
+                
         }
     }
 }
