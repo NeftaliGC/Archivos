@@ -48,10 +48,10 @@ public class Veterinaria {
 
     public static void subMenu(String action) {
         String[] menu = {
-            "a. Perro",
-            "b. Gato",
-            "c. Loro",
-            "d. Volver"
+            "Perro",
+            "Gato",
+            "Loro",
+            "Volver"
         };
         
         String selectedOption = (String) JOptionPane.showInputDialog(
@@ -65,12 +65,11 @@ public class Veterinaria {
         );
 
         if (selectedOption != null) {
-            if (action == "dar de alta") {
-                
-        } else {
-                
-        }
-                
+            if (action == "dar de alta" && selectedOption != "Volver") {
+                javax.swing.JOptionPane.showMessageDialog(null, "Dar de alta a " + selectedOption);
+            } else if (action == "dar consulta" && selectedOption != "Volver") {
+                javax.swing.JOptionPane.showMessageDialog(null, "Consulta de " + selectedOption + "s");
+            }  
         }
     }
 }
