@@ -1,3 +1,9 @@
+/**
+ * @author Guia Cruz Fabian Neftaly
+ * @author Rico Bernal Fatima Sofia
+ * @author Sanchez Gutierrez Haide
+**/
+
 package com.nintech.veterinaria;
 
 public class Loro extends Mascota {
@@ -36,5 +42,4 @@ public class Loro extends Mascota {
     public void setCostoConsulta(Double constoConsulta) {
         this.constoConsulta = constoConsulta;
     }
-
 }

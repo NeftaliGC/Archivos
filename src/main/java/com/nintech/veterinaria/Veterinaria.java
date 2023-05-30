@@ -1,3 +1,10 @@
+/**
+ * @author Guia Cruz Fabian Neftaly
+ * @author Rico Bernal Fatima Sofia
+ * @author Sanchez Gutierrez Haide
+**/
+
+
 package com.nintech.veterinaria;
 
 import javax.swing.*;
@@ -5,14 +12,18 @@ import javax.swing.*;
 public class Veterinaria {
     public static void main(String[] args) {
         boolean exe = true;
+
+        // Ejecutar el menu principal
         do {
             int val = menu();
             switch (val) {
                 case 1:
+                    // Ejecutar el sub menu en modo de dar de alta una mascota
                     subMenu("dar de alta");
                     break;
                 case 2:
-                    subMenu("dar consulta");
+                    // Ejecutar el sub menu en modo de consultar a una mascota
+                    subMenu("consulta");
                     break;
                 case 3:
                     exe = false;
@@ -22,10 +33,11 @@ public class Veterinaria {
         } while (exe);
     }
 
+    // Renderiza el menu principal
     public static int menu() {
         String[] menus = {
             "1. Dar de alta a mascota",
-            "2. Dar consulta a mascota",
+            "2. consulta una mascota",
             "3. Salir"
         };
 
@@ -56,7 +68,7 @@ public class Veterinaria {
         
         String selectedOption = (String) JOptionPane.showInputDialog(
             null,
-            "Seleccione la mascota " + action,
+            "Seleccione la mascota a " + action,
             "Veterinaria",
             JOptionPane.QUESTION_MESSAGE,
             null,
@@ -65,21 +77,17 @@ public class Veterinaria {
         );
 
         if (selectedOption != null) {
-            if (action == "dar de alta" && selectedOption != "Volver" && selectedOption == "Perro") {
-                javax.swing.JOptionPane.showMessageDialog(null, "Dar de alta a " + selectedOption);
-                RellenarFormulario("Perro");
-            } else if (action == "dar de alta" && selectedOption != "Volver" && selectedOption == "Gato") {
-                javax.swing.JOptionPane.showMessageDialog(null, "Dar de alta a " + selectedOption);
-                RellenarFormulario("Gato");
-            } else if (action == "dar de alta" && selectedOption != "Volver" && selectedOption == "Loro") {
-                javax.swing.JOptionPane.showMessageDialog(null, "Dar de alta a " + selectedOption);
-                RellenarFormulario("Loro");
-            }   
-            else if (action == "dar consulta" && selectedOption != "Volver") {
-                String mascotas = Consultorio.consultarMascota(selectedOption);
-                javax.swing.JOptionPane.showMessageDialog(null, "Consulta de " + selectedOption + "s\n" + mascotas);
-            }  
+            if (selectedOption != "Volver") {
+                if (action == "dar de alta") {
+                    javax.swing.JOptionPane.showMessageDialog(null, "Dar de alta a " + selectedOption);
+                    RellenarFormulario(selectedOption);
+                } else if (action == "consulta") {
+                    String mascotas = Consultorio.consultarMascota(selectedOption);
+                    javax.swing.JOptionPane.showMessageDialog(null, "Consulta de " + selectedOption + "s\n" + mascotas);
+                }
+            }
         }
+        
     }
 
     public static void RellenarFormulario(String tipoMascota) {
