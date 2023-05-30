@@ -1,0 +1,4 @@
+Perro,Juan Carlos Bodoque,Bodoque,3,Santiago de Chile,712122912,1,Border collie,Mediano,550.0
+Perro,Saturnino Monteagudo,Morilla,2,Borgo Donati 3 Piano 5,4254334521,3,Teckel,Pequeño,450.0
+Perro,Francisco-Jesus Teruel,Boo,1,Sylke-Dittrich-Allee 11b,3213213146,2,Carlino,Pequeño,500.0
+Perro,Mario Hugo,Albertito,3,Santiago de Chile,3242543512,3,Mestizo,Pequeño,450.0

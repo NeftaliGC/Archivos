@@ -1,0 +1,1 @@
+Loro,Mario Hugo,Cortez,2,Santiago de Chile,2453452123,1,Cafe- blanco-,false,true,330.0

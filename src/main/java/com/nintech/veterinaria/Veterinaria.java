@@ -26,6 +26,7 @@ public class Veterinaria {
                     subMenu("consulta");
                     break;
                 case 3:
+                    // Salir del sistema
                     exe = false;
                     JOptionPane.showMessageDialog(null, "Saliendo del sistema de la veterinaria", "Veterinaria", JOptionPane.INFORMATION_MESSAGE);
                     break;
@@ -58,6 +59,7 @@ public class Veterinaria {
         }
     }
 
+    // Renderiza el sub menu
     public static void subMenu(String action) {
         String[] menu = {
             "Perro",
@@ -90,8 +92,10 @@ public class Veterinaria {
         
     }
 
+    // Renderiza el formulario para dar de alta a una mascota
     public static void RellenarFormulario(String tipoMascota) {
         try {
+            // Se obtienen los datos generales de la mascota a registrar
             String nombreDueno = JOptionPane.showInputDialog(null, "Ingrese el nombre del dueño", "Veterinaria", JOptionPane.QUESTION_MESSAGE);
             String nombreMascota = JOptionPane.showInputDialog(null, "Ingrese el nombre de la mascota", "Veterinaria", JOptionPane.QUESTION_MESSAGE);
             int edad = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la edad de la mascota", "Veterinaria", JOptionPane.QUESTION_MESSAGE));
@@ -99,6 +103,7 @@ public class Veterinaria {
             String telefono = JOptionPane.showInputDialog(null, "Ingrese el teléfono del dueño", "Veterinaria", JOptionPane.QUESTION_MESSAGE);
             int prioridad = (Integer) JOptionPane.showInputDialog(null, "Ingrese la prioridad de la mascota", "Veterinaria", JOptionPane.QUESTION_MESSAGE, null, new Object[] {1, 2, 3}, 1);
             
+            // Se obtienen los datos especificos de la mascota a registrar
             if (tipoMascota.equals("Perro")) {
                 String[] tamaños = {"Pequeño", "Mediano", "Grande"};
                 String raza = JOptionPane.showInputDialog(null, "Ingrese la raza de la mascota", "Veterinaria", JOptionPane.QUESTION_MESSAGE);
@@ -117,6 +122,7 @@ public class Veterinaria {
 
             JOptionPane.showMessageDialog(null, "Mascota registrada correctamente", "Veterinaria", JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception e) {
+            // Si hay algun error en los datos ingresados se muestra un mensaje de error y la mascota no se registra
             JOptionPane.showMessageDialog(null, "Error al registrar mascota intentelo nuevamente " + e, "Veterinaria", JOptionPane.ERROR_MESSAGE);
         }
     }

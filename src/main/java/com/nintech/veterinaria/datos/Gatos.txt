@@ -1,0 +1,4 @@
+Gato,Tulio Triviño,Brad,3,Santiago de Chile,3342342123,2,Gris,60cm,400.0
+Gato,Sacramento Caparros,Moty,2,Magaña Baja,345453452,1,Cafe,40cm,440.0
+Gato,Samuel de Luque,Kira,4,Andorra,134342342,2,Gris,60cm,400.0
+Gato,Sofía Bernal,Nini,3,calle 02,7225698699,2,gris,20cm,400.0
