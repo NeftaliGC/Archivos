@@ -65,11 +65,55 @@ public class Veterinaria {
         );
 
         if (selectedOption != null) {
-            if (action == "dar de alta" && selectedOption != "Volver") {
+            if (action == "dar de alta" && selectedOption != "Volver" && selectedOption == "Perro") {
                 javax.swing.JOptionPane.showMessageDialog(null, "Dar de alta a " + selectedOption);
-            } else if (action == "dar consulta" && selectedOption != "Volver") {
+                RellenarFormulario("Perro");
+            } else if (action == "dar de alta" && selectedOption != "Volver" && selectedOption == "Gato") {
+                javax.swing.JOptionPane.showMessageDialog(null, "Dar de alta a " + selectedOption);
+                RellenarFormulario("Gato");
+            } else if (action == "dar de alta" && selectedOption != "Volver" && selectedOption == "Loro") {
+                javax.swing.JOptionPane.showMessageDialog(null, "Dar de alta a " + selectedOption);
+                RellenarFormulario("Loro");
+            }   
+            else if (action == "dar consulta" && selectedOption != "Volver") {
                 javax.swing.JOptionPane.showMessageDialog(null, "Consulta de " + selectedOption + "s");
             }  
         }
+    }
+
+    public static void RellenarFormulario(String tipoMascota) {
+        if (tipoMascota == "Perro") {
+            String nombreDueno = JOptionPane.showInputDialog(null, "Ingrese el nombre del dueño", "Veterinaria", JOptionPane.QUESTION_MESSAGE);
+            String nombreMascota = JOptionPane.showInputDialog(null, "Ingrese el nombre de la mascota", "Veterinaria", JOptionPane.QUESTION_MESSAGE);
+            int edad = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la edad de la mascota", "Veterinaria", JOptionPane.QUESTION_MESSAGE));
+            String direccion = JOptionPane.showInputDialog(null, "Ingrese la dirección del dueño", "Veterinaria", JOptionPane.QUESTION_MESSAGE);
+            String telefono = JOptionPane.showInputDialog(null, "Ingrese el teléfono del dueño", "Veterinaria", JOptionPane.QUESTION_MESSAGE);
+            int prioridad = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la prioridad de la mascota", "Veterinaria", JOptionPane.QUESTION_MESSAGE));
+            String raza = JOptionPane.showInputDialog(null, "Ingrese la raza de la mascota", "Veterinaria", JOptionPane.QUESTION_MESSAGE);
+            String tamano = JOptionPane.showInputDialog(null, "Ingrese el tamaño de la mascota", "Veterinaria", JOptionPane.QUESTION_MESSAGE);
+            Consultorio.registrarMascotaPerro(tipoMascota, nombreDueno, nombreMascota, edad, direccion, telefono, prioridad, raza, tamano);
+        } else if (tipoMascota == "Gato") {
+            String nombreDueno = JOptionPane.showInputDialog(null, "Ingrese el nombre del dueño", "Veterinaria", JOptionPane.QUESTION_MESSAGE);
+            String nombreMascota = JOptionPane.showInputDialog(null, "Ingrese el nombre de la mascota", "Veterinaria", JOptionPane.QUESTION_MESSAGE);
+            int edad = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la edad de la mascota", "Veterinaria", JOptionPane.QUESTION_MESSAGE));
+            String direccion = JOptionPane.showInputDialog(null, "Ingrese la dirección del dueño", "Veterinaria", JOptionPane.QUESTION_MESSAGE);
+            String telefono = JOptionPane.showInputDialog(null, "Ingrese el teléfono del dueño", "Veterinaria", JOptionPane.QUESTION_MESSAGE);
+            int prioridad = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la prioridad de la mascota", "Veterinaria", JOptionPane.QUESTION_MESSAGE));
+            String color = JOptionPane.showInputDialog(null, "Ingrese el color de la mascota", "Veterinaria", JOptionPane.QUESTION_MESSAGE);
+            String tamano = JOptionPane.showInputDialog(null, "Ingrese el tamaño de la mascota", "Veterinaria", JOptionPane.QUESTION_MESSAGE);
+            Consultorio.registrarMascotaGato(tipoMascota, nombreDueno, nombreMascota, edad, direccion, telefono, prioridad, color, tamano);
+        } else if (tipoMascota == "Loro") {
+            String nombreDueno = JOptionPane.showInputDialog(null, "Ingrese el nombre del dueño", "Veterinaria", JOptionPane.QUESTION_MESSAGE);
+            String nombreMascota = JOptionPane.showInputDialog(null, "Ingrese el nombre de la mascota", "Veterinaria", JOptionPane.QUESTION_MESSAGE);
+            int edad = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la edad de la mascota", "Veterinaria", JOptionPane.QUESTION_MESSAGE));
+            String direccion = JOptionPane.showInputDialog(null, "Ingrese la dirección del dueño", "Veterinaria", JOptionPane.QUESTION_MESSAGE);
+            String telefono = JOptionPane.showInputDialog(null, "Ingrese el teléfono del dueño", "Veterinaria", JOptionPane.QUESTION_MESSAGE);
+            int prioridad = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la prioridad de la mascota", "Veterinaria", JOptionPane.QUESTION_MESSAGE));
+            String[] colores = JOptionPane.showInputDialog(null, "Ingrese los colores de la mascota", "Veterinaria", JOptionPane.QUESTION_MESSAGE).split(",");
+            boolean vuela = Boolean.parseBoolean(JOptionPane.showInputDialog(null, "¿La mascota vuela?", "Veterinaria", JOptionPane.QUESTION_MESSAGE));
+            boolean canta = Boolean.parseBoolean(JOptionPane.showInputDialog(null, "¿La mascota canta?", "Veterinaria", JOptionPane.QUESTION_MESSAGE));
+            Consultorio.registrarMascotaLoro(tipoMascota, nombreDueno, nombreMascota, edad, direccion, telefono, prioridad, colores, vuela, canta);
+        }
+            
     }
 }
